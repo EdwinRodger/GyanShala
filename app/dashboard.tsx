@@ -29,7 +29,7 @@ export default function DashboardScreen() {
               {t('app_name')}
             </Text>
             <Text className="text-2xl font-semibold text-foreground">
-              {t('dashboard_placeholder_title', { defaultValue: 'Dashboard (coming soon)' })}
+              {t('dashboard_placeholder_title', { defaultValue: 'Dashboard' })}
             </Text>
             <Text className="text-sm text-muted-foreground">
               {t('dashboard_placeholder_body', {
