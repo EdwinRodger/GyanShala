@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { Text } from '@/components/ui/text';
-import { Stack } from 'expo-router';
+import { Stack, router } from 'expo-router';
 import { BookOpenIcon, Globe2Icon, SparklesIcon } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import * as React from 'react';
@@ -46,7 +46,11 @@ export default function HomeScreen() {
 
           {/* Primary actions */}
           <View className="flex-row gap-3">
-            <Button className="flex-1">
+            <Button
+              className="flex-1"
+              onPress={() => {
+                router.push('/auth');
+              }}>
               <Text className="font-medium text-primary-foreground">Start Learning</Text>
             </Button>
             <Button className="flex-1" variant="outline">
