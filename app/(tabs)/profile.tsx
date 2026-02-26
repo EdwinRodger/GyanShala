@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
+import { clearCurrentUser, getCurrentUser } from '@/lib/session';
 import { Stack, router } from 'expo-router';
 import * as React from 'react';
 import { ScrollView, View } from 'react-native';
@@ -9,6 +10,8 @@ const SCREEN_OPTIONS = {
 };
 
 export default function ProfileScreen() {
+  const user = getCurrentUser();
+
   return (
     <>
       <Stack.Screen options={SCREEN_OPTIONS} />
@@ -30,11 +33,19 @@ export default function ProfileScreen() {
           <View className="gap-3 rounded-2xl border border-border/70 bg-card/80 p-4">
             <Text className="text-sm font-semibold text-foreground">Basic details</Text>
             <Text className="text-xs text-muted-foreground">
-              Name: <Text className="font-semibold text-foreground">Learner (placeholder)</Text>
+              Name:{' '}
+              <Text className="font-semibold text-foreground">
+                {user?.name ?? 'Learner'}
+              </Text>
             </Text>
             <Text className="text-xs text-muted-foreground">
-              In a later version, this area can pull the real name and saved progress from your
-              account.
+              Email:{' '}
+              <Text className="font-semibold text-foreground">
+                {user?.email ?? 'Not set'}
+              </Text>
+            </Text>
+            <Text className="text-xs text-muted-foreground">
+              These details are kept only while the app is open in this session.
             </Text>
           </View>
 
@@ -63,6 +74,25 @@ export default function ProfileScreen() {
               className="self-start rounded-full px-4 py-1.5"
               onPress={() => router.push('/career')}>
               <Text className="text-xs font-medium">Open career guidance</Text>
+            </Button>
+          </View>
+
+          <View className="gap-3 rounded-2xl border border-destructive/60 bg-card/80 p-4">
+            <Text className="text-sm font-semibold text-destructive">
+              Logout
+            </Text>
+            <Text className="text-xs text-muted-foreground">
+              End this learning session and go back to the login screen.
+            </Text>
+            <Button
+              size="sm"
+              variant="outline"
+              className="self-start rounded-full px-4 py-1.5 border-destructive/70"
+              onPress={() => {
+                clearCurrentUser();
+                router.replace('/auth');
+              }}>
+              <Text className="text-xs font-medium text-destructive">Logout</Text>
             </Button>
           </View>
         </View>
