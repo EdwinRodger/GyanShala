@@ -67,7 +67,7 @@
   "dashboard_languages_body": "GyanShala currently supports these languages for the interface. More regional languages can be added over time.",
   "dashboard_language_placeholder_body": "Content in this language will use the same lessons, but with translated labels and guidance.",
 
-  "dashboard_placeholder_title": "Dashboard (coming soon)",
+  "dashboard_placeholder_title": "Dashboard",
   "dashboard_placeholder_body": "This screen will later show your recent activity, progress, and shortcuts to lessons. For now it uses simple placeholder cards.",
   "dashboard_placeholder_card_progress_title": "Learning progress",
   "dashboard_placeholder_card_progress_body": "Here you will later see how many lessons you have completed and what to revise next.",
