@@ -25,7 +25,7 @@ export default function HomeScreen() {
         contentContainerStyle={{ flexGrow: 1 }}
         className="bg-background"
         bounces={false}>
-        <View className="flex-1 gap-10 px-6 pb-10 pt-24">
+        <View className="flex-1 gap-10 px-6 pb-12 pt-24">
           {/* Hero */}
           <View className="gap-4">
             <View className="self-start rounded-full bg-primary/10 px-3 py-1">
@@ -39,8 +39,9 @@ export default function HomeScreen() {
             </Text>
 
             <Text className="text-base text-muted-foreground">
-              A low-bandwidth, AI-powered education platform bringing quality learning to rural
-              communities in multiple regional languages.
+              GyanShala is a low-bandwidth, AI-powered education companion built for government
+              schools, NGOs, and community classrooms. It helps teachers deliver structured lessons,
+              revision, and career guidance even when internet access is patchy.
             </Text>
           </View>
 
@@ -53,8 +54,13 @@ export default function HomeScreen() {
               }}>
               <Text className="font-medium text-primary-foreground">Start Learning</Text>
             </Button>
-            <Button className="flex-1" variant="outline">
-              <Text className="font-medium">Browse Courses</Text>
+            <Button
+              className="flex-1"
+              variant="outline"
+              onPress={() => {
+                router.push('/dashboard');
+              }}>
+              <Text className="font-medium">Browse Content</Text>
             </Button>
           </View>
 
@@ -69,8 +75,9 @@ export default function HomeScreen() {
               </Text>
             </View>
             <Text className="text-sm text-muted-foreground">
-              Lessons are optimized to work smoothly on 2G/3G networks, with offline-first content
-              and lightweight media so learners never miss a class.
+              Lessons are optimized to work smoothly on 2G/3G networks, with offline-friendly
+              content and lightweight media so learners never miss a class. Downloadable modules and
+              bite-sized videos keep data usage low while still feeling rich and interactive.
             </Text>
           </View>
 
@@ -83,7 +90,7 @@ export default function HomeScreen() {
               <Text className="text-sm font-semibold text-foreground">Multiple Languages</Text>
               <Text className="text-xs text-muted-foreground">
                 Switch between regional languages so students can learn in the language they
-                understand best.
+                understand best, including local scripts and examples rooted in everyday rural life.
               </Text>
             </View>
 
@@ -93,8 +100,8 @@ export default function HomeScreen() {
               </View>
               <Text className="text-sm font-semibold text-foreground">AI Learning Guide</Text>
               <Text className="text-xs text-muted-foreground">
-                AI-assisted summaries, practice questions, and explanations tailored to each
-                learner&apos;s pace.
+                AI-assisted summaries, practice questions, and step-by-step explanations that adjust
+                to each learner&apos;s pace, helping students revise smarter and teachers save time.
               </Text>
             </View>
           </View>
@@ -115,13 +122,66 @@ export default function HomeScreen() {
             </View>
           </View>
 
+          {/* How it helps */}
+          <View className="gap-4 rounded-3xl border border-border/60 bg-card/80 p-4">
+            <Text className="text-sm font-semibold text-foreground">How GyanShala helps</Text>
+            <Text className="text-xs text-muted-foreground">
+              GyanShala brings together curriculum-aligned lessons, practice sets, and guidance
+              content so that teachers, volunteers, and parents can run effective study circles in
+              villages and small towns.
+            </Text>
+            <View className="gap-2">
+              <Text className="text-xs text-muted-foreground">
+                • Teachers get ready-to-use lesson flows and homework suggestions.
+              </Text>
+              <Text className="text-xs text-muted-foreground">
+                • Students get revision, quizzes, and concept explanations in their own language.
+              </Text>
+              <Text className="text-xs text-muted-foreground">
+                • Communities can track engagement and support learners who are at risk of dropping
+                out.
+              </Text>
+            </View>
+          </View>
+
+          {/* Audience cards */}
+          <View className="gap-3">
+            <Text className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Made For
+            </Text>
+            <View className="gap-2">
+              <View className="gap-2 rounded-2xl border border-border/60 bg-card/80 p-3">
+                <Text className="text-xs font-semibold text-foreground">Rural Schools</Text>
+                <Text className="text-xs text-muted-foreground">
+                  Support teachers with structured digital content that fits into regular classroom
+                  routines without needing computer labs or expensive devices.
+                </Text>
+              </View>
+              <View className="gap-2 rounded-2xl border border-border/60 bg-card/80 p-3">
+                <Text className="text-xs font-semibold text-foreground">NGOs & Learning Centres</Text>
+                <Text className="text-xs text-muted-foreground">
+                  Run after-school programs, bridge courses, and foundational literacy and numeracy
+                  camps with ready-made modules.
+                </Text>
+              </View>
+              <View className="gap-2 rounded-2xl border border-border/60 bg-card/80 p-3">
+                <Text className="text-xs font-semibold text-foreground">Parents & Mentors</Text>
+                <Text className="text-xs text-muted-foreground">
+                  Use simple, guided practice sessions to keep children learning at home, even when
+                  schools are far away or timing is irregular.
+                </Text>
+              </View>
+            </View>
+          </View>
+
           {/* Footer note */}
           <View className="gap-1">
             <Text className="text-[11px] font-medium text-muted-foreground">
               Designed for schools, NGOs & community centres.
             </Text>
             <Text className="text-[11px] text-muted-foreground">
-              Bring GyanShala to your village and keep every learner connected.
+              Bring GyanShala to your village and keep every learner connected to quality learning,
+              guidance, and opportunities.
             </Text>
           </View>
         </View>
