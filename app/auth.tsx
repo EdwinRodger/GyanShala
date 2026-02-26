@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { db } from '@/lib/db';
 import { users } from '@/lib/schema';
+import { setCurrentUser, getCurrentUser } from '@/lib/session';
 import { Stack, router } from 'expo-router';
 import { eq } from 'drizzle-orm';
 import * as React from 'react';
@@ -50,6 +51,13 @@ export default function AuthScreen() {
   const [password, setPassword] = React.useState('');
   const [loading, setLoading] = React.useState(false);
 
+  React.useEffect(() => {
+    const existing = getCurrentUser();
+    if (existing) {
+      router.replace('/(tabs)/dashboard');
+    }
+  }, []);
+
   const handleSubmitNative = async () => {
     if (!email || !password || (mode === 'signup' && !name)) {
       Alert.alert('Missing details', 'Please fill all required fields.');
@@ -83,6 +91,12 @@ export default function AuthScreen() {
         Alert.alert('Login failed', 'Invalid email or password.');
         return;
       }
+
+      setCurrentUser({
+        id: found[0].id,
+        name: found[0].name,
+        email: found[0].email,
+      });
 
       Alert.alert('Login successful', `Welcome back, ${found[0].name}!`);
       router.replace('/(tabs)/dashboard');
@@ -132,6 +146,12 @@ export default function AuthScreen() {
         Alert.alert('Login failed', 'Invalid email or password.');
         return;
       }
+
+      setCurrentUser({
+        id: found.id,
+        name: found.name,
+        email: found.email,
+      });
 
       Alert.alert('Login successful', `Welcome back, ${found.name}!`);
       router.replace('/(tabs)/dashboard');
