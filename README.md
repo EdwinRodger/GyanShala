@@ -105,8 +105,29 @@ Built using open-source technologies with low infrastructure cost and scalable c
 ### Web Application View
 <!-- Add website screenshots here -->
 
-### QA Chatbot
-<!-- Add chatbot screenshots here -->
+### 🤖 QA Chatbot (AI Learning Assistant)
+
+<p align="center">
+  <img src="images/chatbot-english.png" width="800"/>
+</p>
+
+<p align="center">
+  <img src="images/chatbot-hindi.png" width="800"/>
+</p>
+
+<p align="center">
+  <img src="images/chatbot-gujarati.png" width="800"/>
+</p>
+
+The AI-powered QA Chatbot is built using Retrieval-Augmented Generation (RAG) with LangChain and FAISS. It provides:
+
+- Instant doubt resolution  
+- Context-aware answers from study materials  
+- Multilingual support (English, Hindi, Gujarati)  
+- Simple explanations in student-friendly language  
+- Real-time academic assistance  
+
+The chatbot enhances understanding and promotes self-driven learning for rural students.
 
 ---
 
