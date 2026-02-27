@@ -114,8 +114,10 @@ The web platform provides a structured learning environment accessible from any 
 The website is lightweight, responsive, and accessible across devices to ensure equal access for rural students.
 
 ### Mobile App View
-<img src="docs/img/App1.png" width="200" height="400">
-<img src="docs/img/App2.png" width="200" height="400">
+<p align="center">
+  <img src="docs/img/App1.png" width="220"/>
+  <img src="docs/img/App2.png" width="220"/>
+</p>
 The Gyan-Shala mobile application is designed specifically for rural students with a clean, simple, and multilingual interface. It supports:
 
 - Subject-wise learning content
